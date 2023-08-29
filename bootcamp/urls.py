@@ -6,6 +6,6 @@ from .views import get_koder, list_koders
 
 urlpatterns = [
     # Custom URLs
-    path("koders/", get_koder),
-    path("koders/<int:id>", list_koders)
+    path("koders/", list_koders),
+    path("koders/<int:id>", get_koder)
 ]

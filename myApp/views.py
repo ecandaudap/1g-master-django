@@ -16,7 +16,10 @@ def saludo(request):
     return HttpResponse("Saludando a los Koders")
 
 def saludar_con_nombre(request, nombre):
-    context = {"nombre": nombre} # Va a servir para pasarle info al template
+    context = {
+        ##"nombre": nombre,
+        "apellido": "Hernández"
+        } # Va a servir para pasarle info al template
     template = loader.get_template("base.html")
     return HttpResponse(template.render(context, request))
 

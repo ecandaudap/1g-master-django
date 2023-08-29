@@ -1,5 +1,7 @@
 from django.shortcuts import render
+
 from django.http import HttpResponse
+from django.template import loader
 
 # Create your views here.
 
@@ -15,8 +17,14 @@ def get_koder(request, id):
     return HttpResponse(f"Founded koder --->>> {founded_koder}")
 
 def list_koders(request):
-    koders = [
-        {"name": "Benjamin", "generation": "ig", "bootcamp": "Python"},
-        {"name": "Luis", "generation": "ig", "bootcamp": "Python"}
-    ]
-    return HttpResponse(f"<h1>{koders}<h1>")
+    context = {
+        "bootcamp":{"name": "Python", "module": "Django"},
+        "koders" : [
+            {"name": "Benjamin", "generation": "ig", "bootcamp": "Python", "is_active": True},
+            {"name": "Luis", "generation": "ig", "bootcamp": "Python", "is_active": True},
+            {"name": "Enrique", "generation": "ig", "bootcamp": "Python", "is_active": False}
+        ],
+    }
+
+    template = loader.get_template("bootcamp/templates/list_koders.html")
+    return HttpResponse(template.render(context, request))
