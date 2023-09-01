@@ -26,5 +26,32 @@ def list_koders(request):
         ],
     }
 
-    template = loader.get_template("bootcamp/templates/list_koders.html")
+    template = loader.get_template("templates/list_koders.html")
+    return HttpResponse(template.render(context, request))
+
+def list_mentors(request):
+    context = {
+        "mentors": [
+            {
+                "name": "Benjamin",
+                "last_name": "Aguilar",
+                "is_active": True
+            },
+            {
+                "name": "Alfredo",
+                "last_name": "Altamirano",
+                "is_active": True
+            },
+            {
+                "name": "Charles",
+                "last_name": "Lopez",
+                "is_active": False
+            },
+        ],
+    }
+
+
+
+
+    template = loader.get_template("templates/list_mentors.html")
     return HttpResponse(template.render(context, request))

@@ -20,12 +20,12 @@ def saludar_con_nombre(request, nombre):
         ##"nombre": nombre,
         "apellido": "Hernández"
         } # Va a servir para pasarle info al template
-    template = loader.get_template("base.html")
+    template = loader.get_template("templates/base.html")
     return HttpResponse(template.render(context, request))
 
 def saludar_con_nombre2(request, nombre, type):
     context = {"nombre": nombre, "type": type} # Va a servir para pasarle info al template
-    template = loader.get_template("base2.html")
+    template = loader.get_template("templates/base2.html")
     return HttpResponse(template.render(context, request))
 
 

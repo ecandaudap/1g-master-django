@@ -1,0 +1,17 @@
+<!-- TEMPLATE HIJO-->
+{%extends "templates/base.html"%}
+
+
+<!-- Bloque dinámico hijo-->
+
+{% block title%}
+<h2> Esto es el TITULO en el hijo LIST MENTORS</h2>
+{% endblock title%}
+
+{% block content %}
+    {% for mentor in mentors %}
+    <span> Name:{{mentor.name}}</span>
+    <span> Last Name:{{mentor.last_name}}</span>
+    <span> Is Active:{{mentor.is_active}}</span>
+    {% endfor %}
+{% endblock content %}
