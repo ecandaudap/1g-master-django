@@ -33,7 +33,7 @@ class Generation(models.Model):
 
 
     def __str__(self):
-        return f"{self.number} {self.bootcamp.name}"
+        return f"{self.number} python manage{self.bootcamp.name}"
 
 class Koder(models.Model):
     '''Koder Model.'''

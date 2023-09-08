@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Incluya todas las URLs de MyApp
     path("", include("myApp.urls")),
-    path("", include("bootcamp.urls"))
+    path("", include("bootcamp.urls")),
+    path("psicomedic/", include("psicomedic.urls"))
 ]
 

@@ -1,0 +1,18 @@
+<!-- TEMPLATE HIJO-->
+{%extends "base.html"%}
+
+
+<!-- Bloque dinámico hijo-->
+
+{% block title%}
+<h2> Psychologists' list</h2>
+{% endblock title%}
+
+{% block content %}
+    {% for psychologist in psychologists %}
+    <span> Name:{{psychologist.first_name}}</span>
+    <span> Last Name:{{psychologist.last_name}}</span>
+    <span> Email:{{psychologist.email}}</span>
+    <span> Phone:{{psychologist.phone}}</span>
+    {% endfor %}
+{% endblock content %}

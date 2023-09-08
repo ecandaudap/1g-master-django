@@ -1,0 +1,16 @@
+<!-- TEMPLATE HIJO-->
+{%extends "base.html"%}
+
+
+<!-- Bloque dinámico hijo-->
+
+{% block title%}
+<h2> Appointments' list</h2>
+{% endblock title%}
+
+{% block content %}
+    {% for appointment in appointments %}
+    <span> Appointment Date:{{appointment.appointment_date}}</span>
+    <span> Created:{{appointment.created_at}}</span>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,18 @@
+<!-- TEMPLATE HIJO-->
+{%extends "base.html"%}
+
+
+<!-- Bloque dinámico hijo-->
+
+{% block title%}
+<h2> Patients' list</h2>
+{% endblock title%}
+
+{% block content %}
+    {% for patient in patients %}
+    <span> Name:{{patient.first_name}}</span>
+    <span> Last Name:{{patient.last_name}}</span>
+    <span> Email:{{patient.email}}</span>
+    <span> Phone:{{patient.phone}}</span>
+    {% endfor %}
+{% endblock content %}

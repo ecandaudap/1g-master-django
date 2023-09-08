@@ -1,0 +1,43 @@
+from psicomedic.models import Appointment, Psychologist, Patient
+import datetime
+
+appointment1 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 10, 9))
+appointment2 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 11, 1))
+appointment3 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 11, 7))
+appointment4 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 12, 9))
+appointment5 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 12, 10))
+appointment6 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 12, 21))
+appointment7 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 12, 25))
+appointment8 = Appointment.objects.create(appointment_date=datetime.datetime(2023, 12, 27))
+
+psychologist1 = Psychologist.objects.create(first_name="José", last_name="Altamirano", birthdate=datetime.datetime(1990, 8, 11), email="jos@psy.mx", phone= "+52 1111 1111")
+psychologist2 = Psychologist.objects.create(first_name="Alex", last_name="Rodríguez", birthdate=datetime.datetime(1997, 10, 21), email="alex@psy.mx", phone= "+52 1111 1112")
+psychologist3 = Psychologist.objects.create(first_name="Carlos", last_name="Aurioles", birthdate=datetime.datetime(1977, 12, 26), email="carlitos@psy.mx", phone= "+52 1111 1113")
+
+psychologist1.appointments.add(appointment1)
+psychologist1.appointments.add(appointment5)
+psychologist2.appointments.add(appointment3)
+psychologist2.appointments.add(appointment4)
+psychologist3.appointments.add(appointment6)
+psychologist3.appointments.add(appointment2)
+psychologist3.appointments.add(appointment8)
+psychologist3.appointments.add(appointment7)
+
+patient1 = Patient.objects.create(first_name="Martha", last_name="Rojas", birthdate=datetime.datetime(1960, 11, 18), email="mrojas@gmail.com", phone="+52 2222 2222", biography="New patient", address_id="Dif")
+patient2 = Patient.objects.create(first_name="Rodrigo", last_name="Dominguez", birthdate=datetime.datetime(1990, 3, 20), email="rodrigo@gmail.com", phone="+52 2222 2223", biography="New patient", address_id="None1")
+patient3 = Patient.objects.create(first_name="Paquito", last_name="Santos", birthdate=datetime.datetime(1993, 5, 16), email="paquito@gmail.com", phone="+52 2222 2224", biography="New patient", address_id="None2")
+patient4 = Patient.objects.create(first_name="Luis", last_name="Ramos", birthdate=datetime.datetime(1975, 10, 7), email="luis@gmail.com", phone="+52 2222 2225", biography="New patient", address_id="None3")
+patient5 = Patient.objects.create(first_name="Juan", last_name="RiveraPerez", birthdate=datetime.datetime(1967, 8, 12), email="juan@gmail.com", phone="+52 2222 2226", biography="New patient", address_id="None4")
+patient6 = Patient.objects.create(first_name="Irving", last_name="Martinez", birthdate=datetime.datetime(1988, 8, 21), email="irving@gmail.com", phone="+52 2222 2227", biography="New patient", address_id="None5")
+patient7 = Patient.objects.create(first_name="Benjamin", last_name="Fernandez", birthdate=datetime.datetime(1950, 3, 13), email="benjamin@gmail.com", phone="+52 2222 2228", biography="New patient", address_id="None6")
+patient8 = Patient.objects.create(first_name="Alex", last_name="Jaimes", birthdate=datetime.datetime(1971, 2, 1), email="alex@gmail.com", phone="+52 2222 2229", biography="New patient", address_id="None7")
+
+patient1.appointments.add(appointment1)
+patient2.appointments.add(appointment2)
+patient3.appointments.add(appointment3)
+patient4.appointments.add(appointment4)
+patient5.appointments.add(appointment5)
+patient6.appointments.add(appointment6)
+patient7.appointments.add(appointment7)
+patient8.appointments.add(appointment8)
+
